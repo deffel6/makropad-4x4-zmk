@@ -1,0 +1,51 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/*
+ * Belegung nach Vorgabe, Tasten von oben links nach rechts durchnummeriert
+ * (0 bis 15):
+ *
+ *    0  Strg+Alt+Befehl+H      8  Umschalt+Befehl+S
+ *    1  Strg+Alt+Befehl+J      9  Befehl+S
+ *    2  Strg+Alt+Befehl+K     10  Umschalt+Alt+Befehl+C
+ *    3  Strg+Alt+Befehl+L     11  Umschalt+Befehl+4
+ *    4  Strg+Alt+Befehl+V     12  Strg+Alt+Befehl+B
+ *    5  Strg+Alt+Befehl+W     13  Befehl+I
+ *    6  Strg+Alt+Befehl+X     14  Umschalt+Alt+Befehl+F
+ *    7  Strg+Alt+Befehl+Y     15  Strg+Umschalt+Befehl+4
+ *
+ * Die Modifikatoren heißen in ZMK LC (Strg links), LS (Umschalt links),
+ * LA (Alt links) und LG (Befehl links). Geschachtelt ergibt LC(LA(LG(H)))
+ * also Strg+Alt+Befehl+H. Ziffern heißen N0 bis N9.
+ *
+ * Drei dieser Kürzel sind am Mac bereits vergeben und lösen zusätzlich die
+ * Systemfunktion aus: Umschalt+Befehl+4 und Strg+Umschalt+Befehl+4 machen
+ * Bildschirmfotos, Befehl+I zeigt in vielen Programmen die Informationen.
+ * Das ist hier vermutlich beabsichtigt.
+ *
+ * ACHTUNG: Diese Datei wirkt erst, wenn in ZMK Studio einmal
+ * "Restore Stock Settings" ausgelöst wurde. Sonst gilt weiter die im Keypad
+ * gespeicherte Belegung, und zwar auch nach jedem neuen Flashen.
+ *
+ * Umbelegen danach wie gehabt im Browser: https://zmk.studio
+ */
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		base_layer {
+			display-name = "Programme";
+			bindings = <
+				&kp LC(LA(LG(H)))  &kp LC(LA(LG(J)))  &kp LC(LA(LG(K)))  &kp LC(LA(LG(L)))
+				&kp LC(LA(LG(V)))  &kp LC(LA(LG(W)))  &kp LC(LA(LG(X)))  &kp LC(LA(LG(Y)))
+				&kp LS(LG(S))      &kp LG(S)          &kp LS(LA(LG(C)))  &kp LS(LG(N4))
+				&kp LC(LA(LG(B)))  &kp LG(I)          &kp LS(LA(LG(F)))  &kp LC(LS(LG(N4)))
+			>;
+		};
+
+		/* Reserve für Studio: hier lassen sich später Ebenen anlegen */
+		extra_1 { status = "reserved"; };
+		extra_2 { status = "reserved"; };
+	};
+};
