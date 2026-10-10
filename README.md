@@ -134,7 +134,7 @@ oben links nach rechts:
 
 | Nr. | | Nr. | |
 |---|---|---|---|
-| 0 | Makro `dg1eaw` + Return | 8 | ⇧⌘S |
+| 0 | ⌃⌥⌘H | 8 | ⇧⌘S |
 | 1 | ⌃⌥⌘J | 9 | ⌘S |
 | 2 | ⌃⌥⌘K | 10 | ⇧⌥⌘C |
 | 3 | ⌃⌥⌘L | 11 | ⇧⌘4 |
@@ -143,10 +143,10 @@ oben links nach rechts:
 | 6 | ⌃⌥⌘X | 14 | ⇧⌥⌘F |
 | 7 | ⌃⌥⌘Y | 15 | ⌃⇧⌘4 |
 
-## Makro und Bootloader
+## Bootloader und Name
 
-Das Makro **„dg1eaw + Return"** liegt auf Taste 0. In ZMK Studio lässt es
-sich wie jedes andere Verhalten auch auf andere Tasten legen.
+Das Pad meldet sich über USB und Bluetooth als **„Keypad Thilo"**. Der Name
+steht in `config/keypad4x4.conf` und darf höchstens 16 Zeichen lang sein.
 
 **Taste 0 und 1 gleichzeitig drücken und zwei Sekunden halten** bringt das
 Pad in den Bootloader — das Laufwerk NICENANO erscheint, ohne dass RST und
