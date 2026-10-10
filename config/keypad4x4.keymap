@@ -31,6 +31,47 @@
  */
 
 / {
+	macros {
+		/* Tippt dg1eaw und Return. Liegt auf keiner Taste, Zuweisung in ZMK Studio. */
+		m_dg1eaw: m_dg1eaw {
+			compatible = "zmk,behavior-macro";
+			#binding-cells = <0>;
+			display-name = "dg1eaw + Return";
+			bindings = <&kp D &kp G &kp N1 &kp E &kp A &kp W &kp RET>;
+		};
+	};
+
+	behaviors {
+		/*
+		 * Halten = Bootloader, kurz antippen = nichts. Die beiden Werte hinter
+		 * &lang_bootloader sind Platzhalter, weil weder &bootloader noch &none
+		 * einen Wert brauchen.
+		 */
+		lang_bootloader: lang_bootloader {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			display-name = "Bootloader (halten)";
+			flavor = "tap-preferred";
+			tapping-term-ms = <2000>;
+			bindings = <&bootloader>, <&none>;
+		};
+	};
+
+	combos {
+		compatible = "zmk,combos";
+
+		/*
+		 * Taste 0 und 1 gleichzeitig druecken und zwei Sekunden halten:
+		 * Das Pad springt in den Bootloader, das Laufwerk NICENANO erscheint.
+		 * Ersetzt die Bruecke zwischen RST und GND.
+		 */
+		combo_bootloader {
+			timeout-ms = <50>;
+			key-positions = <0 1>;
+			bindings = <&lang_bootloader 0 0>;
+		};
+	};
+
 	keymap {
 		compatible = "zmk,keymap";
 

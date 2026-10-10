@@ -143,6 +143,15 @@ oben links nach rechts:
 | 6 | ⌃⌥⌘X | 14 | ⇧⌥⌘F |
 | 7 | ⌃⌥⌘Y | 15 | ⌃⇧⌘4 |
 
+## Makro und Bootloader
+
+Das Makro **„dg1eaw + Return"** steckt in der Firmware, liegt aber auf keiner
+Taste. In ZMK Studio lässt es sich wie jedes andere Verhalten zuweisen.
+
+**Taste 0 und 1 gleichzeitig drücken und zwei Sekunden halten** bringt das
+Pad in den Bootloader — das Laufwerk NICENANO erscheint, ohne dass RST und
+GND gebrückt werden müssen. Kurzes gemeinsames Antippen bewirkt nichts.
+
 ## Ändern
 
 **Im Browser:** [zmk.studio](https://zmk.studio) öffnen, Keypad über USB
