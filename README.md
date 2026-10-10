@@ -134,7 +134,7 @@ oben links nach rechts:
 
 | Nr. | | Nr. | |
 |---|---|---|---|
-| 0 | ⌃⌥⌘H | 8 | ⇧⌘S |
+| 0 | Makro `dg1eaw` + Return | 8 | ⇧⌘S |
 | 1 | ⌃⌥⌘J | 9 | ⌘S |
 | 2 | ⌃⌥⌘K | 10 | ⇧⌥⌘C |
 | 3 | ⌃⌥⌘L | 11 | ⇧⌘4 |
@@ -145,8 +145,8 @@ oben links nach rechts:
 
 ## Makro und Bootloader
 
-Das Makro **„dg1eaw + Return"** steckt in der Firmware, liegt aber auf keiner
-Taste. In ZMK Studio lässt es sich wie jedes andere Verhalten zuweisen.
+Das Makro **„dg1eaw + Return"** liegt auf Taste 0. In ZMK Studio lässt es
+sich wie jedes andere Verhalten auch auf andere Tasten legen.
 
 **Taste 0 und 1 gleichzeitig drücken und zwei Sekunden halten** bringt das
 Pad in den Bootloader — das Laufwerk NICENANO erscheint, ohne dass RST und

@@ -5,7 +5,7 @@
  * Belegung nach Vorgabe, Tasten von oben links nach rechts durchnummeriert
  * (0 bis 15):
  *
- *    0  Strg+Alt+Befehl+H      8  Umschalt+Befehl+S
+ *    0  Makro dg1eaw + Return  8  Umschalt+Befehl+S
  *    1  Strg+Alt+Befehl+J      9  Befehl+S
  *    2  Strg+Alt+Befehl+K     10  Umschalt+Alt+Befehl+C
  *    3  Strg+Alt+Befehl+L     11  Umschalt+Befehl+4
@@ -32,7 +32,7 @@
 
 / {
 	macros {
-		/* Tippt dg1eaw und Return. Liegt auf keiner Taste, Zuweisung in ZMK Studio. */
+		/* Tippt dg1eaw und Return. Liegt auf Taste 0. */
 		m_dg1eaw: m_dg1eaw {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
@@ -78,7 +78,7 @@
 		base_layer {
 			display-name = "Programme";
 			bindings = <
-				&kp LC(LA(LG(H)))  &kp LC(LA(LG(J)))  &kp LC(LA(LG(K)))  &kp LC(LA(LG(L)))
+				&m_dg1eaw          &kp LC(LA(LG(J)))  &kp LC(LA(LG(K)))  &kp LC(LA(LG(L)))
 				&kp LC(LA(LG(V)))  &kp LC(LA(LG(W)))  &kp LC(LA(LG(X)))  &kp LC(LA(LG(Y)))
 				&kp LS(LG(S))      &kp LG(S)          &kp LS(LA(LG(C)))  &kp LS(LG(N4))
 				&kp LC(LA(LG(B)))  &kp LG(I)          &kp LS(LA(LG(F)))  &kp LC(LS(LG(N4)))
